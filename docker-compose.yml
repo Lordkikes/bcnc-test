@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  bcnc-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "9292:9292"
+    container_name: bcnc-app
+    networks:
+      - bcnc
+
+networks:
+  bcnc:
+    name: bcnc-network

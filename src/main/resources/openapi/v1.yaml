@@ -1,0 +1,105 @@
+---
+openapi: 3.0.0
+info:
+  title: BCNC TEST
+  description: Services API for BCNC TEST
+  version: "1.0"
+servers:
+  - url: http://localhost:9292/api/v1
+tags:
+  - name: bcnc
+    description: BCNC operations
+
+paths:
+  /price:
+    get:
+      tags:
+        - prices
+      summary: Returns prices
+      description: Returns prices
+      operationId: prices
+      parameters:
+        - name: fecha
+          in: query
+          description: Fecha de aplicación en formato "2023-14-31 23:59:59"
+          required: true
+          schema:
+            type: string
+            example: 2023-14-31 23:59:59
+        - name: productId
+          in: query
+          description: Identificador del producto
+          required: true
+          schema:
+            type: integer
+            example: 1
+        - name: brandId
+          in: query
+          description: Identificador de la marca
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Operation successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conflict'
+
+components:
+  schemas:
+    BadRequest:
+      description: Malformed request
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+    Conflict:
+      description: Conflict
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+
+    #Response
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Error message"
+        code:
+          type: string
+          example: "Error"
+
+    PriceResponse:
+      type: object
+      properties:
+        productId:
+          type: integer
+          example: 1
+        brandId:
+          type: integer
+          example: 1
+        priceList:
+            type: integer
+            example: 1
+        startDate:
+            type: string
+            example: "2023-11-14-00.00.00"
+        endDate:
+            type: string
+            example: "2023-14-31-23.59.59"
+        price:
+            type: number
+            example: 100.0
