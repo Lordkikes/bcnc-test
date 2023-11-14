@@ -11,7 +11,7 @@ tags:
     description: BCNC operations
 
 paths:
-  /price:
+  /prices:
     get:
       tags:
         - prices

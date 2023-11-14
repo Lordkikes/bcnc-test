@@ -25,7 +25,7 @@ docker compose up -d --build
 ```
 
 ### Uso del Servicio
-- Acceder al servicio REST a través de la URL: `http://localhost:8080/prices/getPrice`
+- Acceder al servicio REST a través de la URL: `http://localhost:9292/prices`
 - Utiliza los parámetros de consulta: `fecha`, `productId`, y `brandId`.
 - La respuesta es en formato JSON.
 

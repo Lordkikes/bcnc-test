@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/api/v1/")
-public class PricesRestAdapter implements PriceApi{
+public class PricesRestAdapter implements PricesApi{
 
     private final PriceUseCase priceUseCase;
     private final PriceRestMapper priceRestMapper;
