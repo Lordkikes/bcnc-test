@@ -1,9 +1,15 @@
-# BCNC TEST
+# BCNC TEST 👨🏻‍💻
 
-## Descripción
-Esta aplicación Spring Boot proporciona un servicio REST para consultar precios de productos en una cadena de comercio electrónico.
+## Descripción 📃
+<p style="text-align: justify;">
+Esta aplicación Spring Boot proporciona un servicio REST para consultar precios de productos en una cadena de comercio electrónico.</p>
+<p style="text-align: justify;">
+Mi decisión de obtener la lista de precios en la aplicación y luego filtrarlos se debe a que puedo ofrecer una mayor flexibilidad en la lógica, facilitando cambios a futuro sin afectar a la base de datos. Además, por mantener la lógica de filtrado en la aplicación puedo seguir el principio de Separación de Responsabilidades (PRINCIPIOS SOLID), donde la base de datos se encarga exclusivamente de recuperar datos, y la aplicación se encarga de la lógica de negocio.
 
-## Instrucciones
+Este enfoque no solo optimiza la estructura y mantenimiento del código, sino que también promueve una arquitectura más modular y escalable.
+</p>
+
+## Instrucciones ✏️
 
 ### Construcción del Proyecto
 1. Clona este repositorio.
@@ -14,7 +20,7 @@ Esta aplicación Spring Boot proporciona un servicio REST para consultar precios
 docker compose up -d --build 
 ```
 
-### Ejecución de Tests
+### Ejecución de Tests 🔍
 1. Pruebas Unitarias: Ejecuta las pruebas unitarias desde tu entorno de desarrollo o mediante el siguiente comando:
 ```bash
 ./mvnw test
@@ -24,10 +30,10 @@ docker compose up -d --build
 ./mvnw verify
 ```
 
-### Uso del Servicio
+### Uso del Servicio 🚀
 - Acceder al servicio REST a través de la URL: `http://localhost:9292/prices`
 - Utiliza los parámetros de consulta: `fecha`, `productId`, y `brandId`.
 - La respuesta es en formato JSON.
 
-### Documentación de la API
+### Documentación de la API 📘
 La API está documentada con OpenAPI y Swagger. Puedes acceder a la documentación de la API a través de la siguiente URL después de iniciar la aplicación: `http://localhost:9292/swagger-ui.html`
